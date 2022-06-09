@@ -1,0 +1,12 @@
+@import "colors.scss";
+
+@mixin Elements($Elements, $Text ) {
+  background-color: $Elements;
+  box-shadow: 1px 1px 5px black;
+  color: $Text;
+}
+@mixin NoDefault { 
+    margin: 0;
+    padding: 0;
+  
+}
