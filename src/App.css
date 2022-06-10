@@ -5,20 +5,162 @@
 
 .Dark .Background {
   background-color: hsl(207deg, 26%, 17%);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
 }
 .Dark .Element {
   background-color: hsl(209deg, 23%, 22%);
   box-shadow: 1px 1px 5px black;
   color: White;
 }
+.Dark .ThemeTextColor {
+  color: White;
+  caret-color: White;
+}
 
 .Light .Background {
   background-color: hsl(0deg, 0%, 98%);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
 }
 .Light .Element {
   background-color: White;
   box-shadow: 1px 1px 5px black;
   color: hsl(200deg, 15%, 8%);
+}
+.Light .ThemeTextColor {
+  color: hsl(200deg, 15%, 8%);
+  caret-color: hsl(200deg, 15%, 8%);
+}
+
+.Flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Title {
+  font-size: 24px;
+  font-weight: 800;
+  width: 300px;
+  padding: 1% 10%;
+}
+
+.ThemeChangerButton {
+  margin: 2.5% 5%;
+  width: 150px;
+}
+
+.ThemeChangerButton:hover {
+  color: aquamarine;
+}
+
+.ThemeName {
+  display: inline;
+  margin: 15px;
+}
+
+.SearchBar {
+  width: 30%;
+  margin: 2.5% 10%;
+  border-radius: 5px;
+}
+
+.SearchInput {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  opacity: 0.5;
+}
+
+.SearchInput:focus {
+  outline: none;
+  border: none;
+  opacity: 1;
+}
+
+.SearchIcon {
+  margin: 20px;
+}
+
+.Filter {
+  width: 10%;
+  margin: 2.5% 10%;
+  border: 5px;
+}
+
+.FilterButton {
+  display: flex;
+  align-content: center;
+  padding: 2.5% 5%;
+  font-size: 16px;
+}
+
+.FilterText {
+  display: inline;
+  width: 80%;
+}
+
+.FilterIcon {
+  margin-top: 5%;
+  display: inline;
+}
+
+.TopLayer {
+  position: absolute;
+  z-index: 1;
+  width: 300px;
+}
+
+.visiblityOff {
+  visibility: hidden;
+}
+
+.Border-R {
+  border-radius: 5px;
+}
+
+.RegionList {
+  margin: 2% 0;
+  list-style: none;
+  padding: 10px 0 10px 20px;
+}
+
+.Region {
+  width: 100%;
+  padding: 5px 0 5px;
+}
+
+.FlagContainer {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px 55px;
+  margin: 0% 8.5%;
+}
+
+.CardContainer {
+  width: 325px;
+  height: 400px;
+}
+
+.ImageContainer {
+  width: 100%;
+  height: 50%;
+}
+
+.InformationContainer {
+  margin: 0 0 50px 50px;
+}
+
+h3 {
+  font-weight: 300;
+}
+
+.CountyName {
+  font-weight: 800;
 }
 
 /*# sourceMappingURL=App.css.map */

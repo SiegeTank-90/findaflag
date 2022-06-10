@@ -2,26 +2,161 @@
 @import "colors";
 
 .App {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .Dark {
-    .Background{
-        background-color:  $DarkBackgroud;
-    }
+  .Background {
+    background-color: $DarkBackgroud;
+    @include NoDefault;
+  }
 
-    .Element {
-        @include Elements($DarkElements, $Dark-Text);
-    }
+  .Element {
+    @include Elements($DarkElements, $Dark-Text);
+  }
+
+  .ThemeTextColor {
+    color: $Dark-Text;
+    caret-color: $Dark-Text;
+  }
 }
 
 .Light {
-    .Background {
-        background-color: $LightBackground;
-    }
+  .Background {
+    background-color: $LightBackground;
+    @include NoDefault;
+  }
 
-    .Element{
-        @include Elements($LightElements, $Light-Text);
-    }
+  .Element {
+    @include Elements($LightElements, $Light-Text);
+  }
+
+  .ThemeTextColor {
+    color: $Light-Text;
+    caret-color: $Light-Text;
+  }
+}
+
+.Flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Title {
+  font-size: 24px;
+  font-weight: 800;
+  width: 300px;
+  padding: 1% 10%;
+}
+
+.ThemeChangerButton {
+  margin: 2.5% 5%;
+  width: 150px;
+}
+.ThemeChangerButton:hover {
+  color: aquamarine;
+}
+
+.ThemeName {
+  display: inline;
+  margin: 15px;
+}
+
+.SearchBar {
+  width: 30%;
+  margin: 2.5% 10%;
+  border-radius: 5px;
+}
+.SearchInput {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  opacity: 0.5;
+}
+
+.SearchInput:focus {
+  outline: none;
+  border: none;
+  opacity: 1;
+}
+
+.SearchIcon {
+  margin: 20px;
+}
+
+.Filter {
+  width: 10%;
+  margin: 2.5% 10%;
+  border: 5px;
+}
+
+.FilterButton {
+  display: flex;
+  align-content: center;
+  padding: 2.5% 5%;
+  font-size: 16px;
+  
+}
+
+.FilterText {
+  display: inline;
+  width: 80%;
+}
+.FilterIcon {
+  margin-top: 5%;
+  display: inline;
+}
+
+.TopLayer {
+  position: absolute;
+  z-index: 1;
+  width: 300px;
+}
+
+.visiblityOff {
+  visibility: hidden;
+}
+
+.Border-R {
+    border-radius: 5px;
+}
+
+.RegionList {
+    margin: 2% 0;
+    list-style: none;
+    padding: 10px 0 10px 20px;
+}
+
+.Region{
+    width: 100%;
+    padding: 5px 0 5px;
+}
+
+.FlagContainer {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px 55px;
+    margin:  0% 8.5% ;
+}
+.CardContainer {
+    width: 325px;
+    height: 400px;
+    
+}
+
+.ImageContainer {
+    width: 100%;
+    height: 50%;
+}
+
+.InformationContainer{
+    margin: 0 0 50px 50px ;
+}
+h3 {
+    font-weight: 300;
+}
+
+.CountyName {
+    font-weight: 800;
 }
