@@ -6,48 +6,23 @@ import Search from "./components/Search";
 import Filter from "./components/Filter";
 import FlagGallery from "./components/FlagGallery";
 
-function makeId(length) {
-  let result = "";
-  let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  let charactersLength = characters.length;
-  for (var i = 0; i < length; i++) {
-    result += characters.charAt(Math.floor(Math.random() * charactersLength));
-  }
-  return result;
-}
-
 function App() {
+  const [Theme, setTheme] = useState("Dark");
+  const [SearchParm, setSetParm] = useState("Search for a Country...");
+  const [Data, setData] = useState([]);
+
   useEffect(() => {
     async function getRandomFlags() {
       try {
-        const response = await axios.get(
-          {"https://restcountries.com/v3.1/alpha?codes=" +
-            makeId(3) +
-            "," +
-            makeId(3) +
-            "," +
-            makeId(3) +
-            "," +
-            makeId(3) +
-            "," +
-            makeId(3) +
-            "," +
-            makeId(3) +
-            "," +
-            makeId(3) +
-            "," +
-            makeId(3)}
-        );
-        console.log(response);
+        const response = await axios.get("https://restcountries.com/v3.1/all");
+        setData(response.data);
       } catch (error) {
         console.error(error);
       }
     }
+
     getRandomFlags();
   }, []);
-
-  const [Theme, setTheme] = useState("Dark");
-  const [SearchParm, setSetParm] = useState("Search for a Country...");
 
   function FilterByRegion() {
     console.log("Filter");
@@ -62,7 +37,7 @@ function App() {
           <Search value={SearchParm} setValue={setSetParm} />
           <Filter Filter={FilterByRegion} />
         </div>
-        <FlagGallery Data="" />
+        <FlagGallery Data={Data} />
       </div>
     </div>
   );

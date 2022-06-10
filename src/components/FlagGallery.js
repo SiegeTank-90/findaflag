@@ -1,8 +1,31 @@
 import React from "react";
+import Card from "./Card"
 
-function FlagGallery() {
+function FlagGallery(props) {
+    var find = props.Data[0];
+    console.log(find)
+    var Flags= []
+
+
+
+    // props.Data.forEach((element) =>
+    //     Flags.push(<Card
+    //       Name={element.name.common}
+    //       Flag={element.flag.png}
+    //       pop={element.population}
+    //       continent={element.region}
+    //       capitol={element.capital[0]}
+    //     />
+    //   )
+    // );
+
+
+
+
     return (
-        <h1>Hello FlagGallery</h1>
+        <div className="Flex Wrap FlagContainer">
+           {Flags}
+        </div>
     )
 
 
