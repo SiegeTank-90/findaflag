@@ -7,8 +7,10 @@
   background-color: hsl(207deg, 26%, 17%);
   margin: 0;
   padding: 0;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  min-width: 100vw;
 }
 .Dark .Element {
   background-color: hsl(209deg, 23%, 22%);
@@ -24,8 +26,10 @@
   background-color: hsl(0deg, 0%, 98%);
   margin: 0;
   padding: 0;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  min-width: 100vw;
 }
 .Light .Element {
   background-color: White;
@@ -137,18 +141,20 @@
 .FlagContainer {
   flex-wrap: wrap;
   justify-content: center;
-  gap: 15px 55px;
+  gap: 55px 55px;
   margin: 0% 8.5%;
 }
 
 .CardContainer {
   width: 325px;
-  height: 400px;
+  height: 500px;
+  padding: 5px;
 }
 
-.ImageContainer {
+.FlagImg {
   width: 100%;
-  height: 50%;
+  height: 200px;
+  object-fit: scale-down;
 }
 
 .InformationContainer {
@@ -161,6 +167,16 @@ h3 {
 
 .CountyName {
   font-weight: 800;
+}
+
+@media only screen and (max-width: 1000px) {
+  .SearchBar {
+    width: 100%;
+  }
+  .Wrap {
+    flex-wrap: wrap;
+    margin-bottom: 25%;
+  }
 }
 
 /*# sourceMappingURL=App.css.map */

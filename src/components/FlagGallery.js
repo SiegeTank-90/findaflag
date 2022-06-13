@@ -1,34 +1,58 @@
 import React from "react";
-import Card from "./Card"
+import Card from "./Card";
 
 function FlagGallery(props) {
-    var find = props.Data[0];
-    console.log(find)
-    var Flags= []
+  var Flags = [];
 
+  for (var i = 0; i < props.Data.length; i++) {
+    Flags.push(props.Data[i]);
+  }
+  var Cards = [];
 
+  Flags.forEach((element) => {
+    if (
+      element.name.common.startsWith(props.SearchParm) === true &&
+      element.region === props.Region
+    ) {
+      Cards.push(
+        <Card
+          Name={element.name.common}
+          Flag={element.flags.png}
+          pop={element.population}
+          continent={element.region}
+          capitol={element.capital}
+        />
+      );
+    } else if (
+      element.name.common.startsWith(props.SearchParm) === "" &&
+      element.region === props.Region
+    ) {
+      Cards.push(
+        <Card
+          Name={element.name.common}
+          Flag={element.flags.png}
+          pop={element.population}
+          continent={element.region}
+          capitol={element.capital}
+        />
+      );
+    } else if (
+      element.name.common.startsWith(props.SearchParm) === true &&
+      props.Region === ""
+    ) {
+      Cards.push(
+        <Card
+          Name={element.name.common}
+          Flag={element.flags.png}
+          pop={element.population}
+          continent={element.region}
+          capitol={element.capital}
+        />
+      );
+    }
+  });
 
-    // props.Data.forEach((element) =>
-    //     Flags.push(<Card
-    //       Name={element.name.common}
-    //       Flag={element.flag.png}
-    //       pop={element.population}
-    //       continent={element.region}
-    //       capitol={element.capital[0]}
-    //     />
-    //   )
-    // );
-
-
-
-
-    return (
-        <div className="Flex Wrap FlagContainer">
-           {Flags}
-        </div>
-    )
-
-
+  return <div className="Flex Wrap FlagContainer">{Cards}</div>;
 }
 
-export default FlagGallery
+export default FlagGallery;

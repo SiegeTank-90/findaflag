@@ -34,11 +34,11 @@ function Filter(props) {
       </div>
       <div className="Element Border-R">
         <ul className="RegionList">
-          <li className="Region">Africa</li>
-          <li className="Region">America</li>
-          <li className="Region">Asia</li>
-          <li className="Region">Europe</li>
-          <li className="Region">Oceania</li>
+          <li onClick={()=>props.Filter("Africa")} className="Region">Africa</li>
+          <li onClick={()=>props.Filter("Americas")} className="Region">Americas</li>
+          <li onClick={()=>props.Filter("Asia")} className="Region">Asia</li>
+          <li onClick={()=>props.Filter("Europe")} className="Region">Europe</li>
+          <li onClick={()=>props.Filter("Oceania")} className="Region">Oceania</li>
         </ul>
       </div>
     </div>

@@ -8,12 +8,16 @@ function Search(props) {
   }
 
   function HandleChange(e) {
-    props.setValue(e.target.value);
+    let searchResult = e.target.value;
+    searchResult = searchResult.charAt(0).toUpperCase() + searchResult.slice(1);
+    props.setValue(searchResult);
   }
   function handleSubmit(e) {
     if (e.key === "Enter") {
-      props.setValue("");
-      console.log("submited");
+      let searchResult = e.target.value;
+      searchResult =
+        searchResult.charAt(0).toUpperCase() + searchResult.slice(1);
+      props.setValue(searchResult);
     }
   }
 
@@ -24,6 +28,7 @@ function Search(props) {
       </div>
       <input
         className="SearchInput ThemeTextColor"
+        placeholder="Search for a Country..."
         value={props.value}
         onChange={HandleChange}
         onClick={handleClick}
