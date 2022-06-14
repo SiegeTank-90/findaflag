@@ -8,6 +8,7 @@ function FlagGallery(props) {
     Flags.push(props.Data[i]);
   }
   var Cards = [];
+  
 
   Flags.forEach((element) => {
     if (

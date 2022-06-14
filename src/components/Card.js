@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Card(props) {
   return (
-    <div className="CardContainer Element">
+    <Link className="CardContainer Element" to={`countries/${props.Name}`}>
       <img
         className="FlagImg"
         src={props.Flag}
@@ -11,11 +12,11 @@ function Card(props) {
 
       <div className="InformationContainer">
         <h3 className="CountyName">{props.Name}</h3>
-        <h3 className="Population">{"Population " + props.pop} </h3>
-        <h3 className="CountryRegion">{"Region " + props.continent} </h3>
-        <h3 className="Capitol">{"Captiol " + props.capitol} </h3>
+        <h3 className="Population">{"Population : " + new Intl.NumberFormat('en-us').format(props.pop)} </h3>
+        <h3 className="CountryRegion">{"Region : " + props.continent} </h3>
+        <h3 className="Capitol">{"Captiol : " + props.capitol} </h3>
       </div>
-    </div>
+    </Link>
   );
 }
 export default Card;

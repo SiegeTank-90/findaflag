@@ -2,47 +2,37 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
 import Header from "./components/Header";
-import Search from "./components/Search";
-import Filter from "./components/Filter";
-import FlagGallery from "./components/FlagGallery";
+import GalleryPage from "./pages/GalleryPage";
+import DetailsPage from "./pages/DetailedInformation";
+import { Switch, Route, Routes } from "react-router";
 
 function App() {
   const [Theme, setTheme] = useState("Dark");
-  const [SearchParm, setSetParm] = useState('');
-  const [SearchRegion, setSearchRegion] = useState('')
+  const [isLoading, setisLoading] = useState(true)
+
   const [Data, setData] = useState([]);
-
-  useEffect(() => {
-    async function getAllFlags() {
-      try {
-        const response = await axios.get("https://restcountries.com/v3.1/all");
-        setData(response.data);
-      } catch (error) {
-        console.error(error);
-      }
+  async function getAllFlags() {
+    try {
+      const response = await axios.get("https://restcountries.com/v3.1/all");
+      setData(response.data);
+      setisLoading(false)
+    } catch (error) {
+      console.error(error);
     }
-
-    getAllFlags();
-  }, []);
-
-  function FilterByRegion(region) {
-    
-    setSearchRegion(region)
-    console.log("Filtered " + region);
-
-    return null;
   }
 
+  useEffect(() => {
+    getAllFlags();
+  }, []);
 
   return (
     <div className={"App " + Theme}>
       <div className="Background">
         <Header Theme={Theme} setTheme={setTheme} />
-        <div className="Flex Wrap">
-          <Search value={SearchParm} setValue={setSetParm} />
-          <Filter Filter={FilterByRegion} />
-        </div>
-        <FlagGallery Data={Data} SearchParm={SearchParm} Region={SearchRegion} />
+        <Routes>
+          <Route path="/" element={<GalleryPage Data={Data} Loading={isLoading} />} />
+          <Route path="/countries/:name" element={<DetailsPage />} />
+        </Routes>
       </div>
     </div>
   );
