@@ -30,7 +30,7 @@ function App() {
       <div className="Background">
         <Header Theme={Theme} setTheme={setTheme} />
         <Routes>
-          <Route path="/findaflag/" element={<GalleryPage Data={Data} Loading={isLoading} />} />
+          <Route path="/findaflag" element={<GalleryPage Data={Data} Loading={isLoading} />} />
           <Route path="/findaflag/countries/:name" element={<DetailsPage />} />
         </Routes>
       </div>
