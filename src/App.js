@@ -4,7 +4,7 @@ import "./App.css";
 import Header from "./components/Header";
 import GalleryPage from "./pages/GalleryPage";
 import DetailsPage from "./pages/DetailedInformation";
-import { Switch, Route, Routes } from "react-router";
+import { Route, Routes } from "react-router";
 
 function App() {
   const [Theme, setTheme] = useState("Dark");

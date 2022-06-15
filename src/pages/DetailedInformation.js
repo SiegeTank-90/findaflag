@@ -1,7 +1,6 @@
-import React, { Suspense, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
-import { faLockOpen } from "@fortawesome/free-solid-svg-icons";
 import BorderButton from "../components/BorderButton";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
@@ -10,7 +9,7 @@ function DetailsPage() {
   const [Details, setDetails] = useState({});
   const [isLoading, setisLoading] = useState(true);
 
-  async function getCountry() {
+  async function getCountryDetails() {
     try {
       const response = await axios.get(
         "https://restcountries.com/v3.1/name/" + name + "?fullText=True"
@@ -25,7 +24,7 @@ function DetailsPage() {
   let { name } = useParams();
 
   useEffect(() => {
-    getCountry();
+    getCountryDetails();
   }, []);
 
   if (isLoading === true) {
@@ -52,7 +51,7 @@ function DetailsPage() {
     }
   }
   let BorderButtonArray = [];
-  if (Details.borders != null) {
+  if (Details.borders !== null) {
   let BorderingArray = Object.values(Details.borders);
   for (let i = 0; i < BorderingArray.length; i++) {
       BorderButtonArray.push(<BorderButton code={BorderingArray[i]} />);

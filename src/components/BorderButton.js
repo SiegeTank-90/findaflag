@@ -6,7 +6,7 @@ import axios from "axios";
 function BorderButton(props) {
   const [Name, setName] = useState("");
 
-  async function getCountry() {
+  async function getCountryName() {
     try {
       const response = await axios.get(
         "https://restcountries.com/v3.1/alpha/" + [props.code]
@@ -19,11 +19,11 @@ function BorderButton(props) {
   }
 
   useEffect(() => {
-    getCountry();
+    getCountryName();
   }, []);
 
   return (
-    <Link to={`/countries/${Name}`}>
+    <Link className="BorderButton Element" to={`/countries/${Name}`}>
       <h3 className="BorderButtonContent">{Name}</h3>
     </Link>
   );
