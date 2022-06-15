@@ -23,7 +23,7 @@ function BorderButton(props) {
 
   return (
     
-    <Link reloadDocument className="Element BorderButton"  to={`/countries/${Name}`}>
+    <Link reloadDocument className="Element BorderButton"  to={`findaflag/countries/${Name}`}>
       <h3 className="BorderButtonContent">{Name}</h3>
     </Link>
     

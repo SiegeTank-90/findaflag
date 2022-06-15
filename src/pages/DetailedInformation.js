@@ -63,7 +63,7 @@ function DetailsPage() {
 
   return (
     <div className="DetailsContainer">
-      <Link to="/" className="BackButton Element">
+      <Link to="/findaflag" className="BackButton Element">
         <FontAwesomeIcon icon={faArrowLeft} /> <p className="Back">Back</p>
       </Link>
       <img className="DetailsFlag Element" src={Details.flags.png}></img>
