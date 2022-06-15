@@ -9,7 +9,7 @@ import reportWebVitals from "./reportWebVitals";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <>
-    <BrowserRouter>
+    <BrowserRouter basename="https://siegetank-90.github.io/findaflag/">
       <Routes>
         <Route path="*" element={<App />}></Route>
         <Route index element={<App />}></Route>
