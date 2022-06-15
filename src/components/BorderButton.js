@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import axios from "axios";
 
 function BorderButton(props) {
-    
-    const [Name, setName] = useState("");
+  const [Name, setName] = useState("");
 
   async function getCountry() {
     try {
@@ -23,15 +22,8 @@ function BorderButton(props) {
     getCountry();
   }, []);
 
-
-
   return (
-    <Link
-      reloadDocument
-      className="Element BorderButton"
-      to={`/countries/${Name}`}
-      
-    >   
+    <Link to={`/countries/${Name}`}>
       <h3 className="BorderButtonContent">{Name}</h3>
     </Link>
   );

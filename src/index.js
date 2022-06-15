@@ -3,18 +3,17 @@ import ReactDOM from "react-dom/client";
 import { HashRouter, Routes, Route, BrowserRouter } from "react-router-dom";
 import "./index.css";
 import App from "./App";
-import DetailedInformation from "./pages/DetailedInformation";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <>
-    <BrowserRouter basename="https://siegetank-90.github.io/findaflag">
+    <HashRouter hashType={"noslash"} >
       <Routes>
         <Route path="*" element={<App />}></Route>
         <Route index element={<App />}></Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   </>
 );
 
