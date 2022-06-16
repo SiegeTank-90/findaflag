@@ -43,20 +43,26 @@ function DetailsPage() {
       Languages += ", ";
     }
   }
+  let Currencies = "No Currency ";
+  if (Details.currencies != null) {
   let CurrenciesArray = Object.values(Details.currencies);
-  let Currencies = " ";
   for (let i = 0; i < CurrenciesArray.length; i++) {
     Currencies += CurrenciesArray[i].name;
     if (i != CurrenciesArray.length - 1) {
       Currencies += ", ";
     }
   }
+}
   let BorderButtonArray = [];
   if (Details.borders != null) {
   let BorderingArray = Object.values(Details.borders);
   for (let i = 0; i < BorderingArray.length; i++) {
       BorderButtonArray.push(<BorderButton code={BorderingArray[i]} />);
     }
+  }
+  var Capitol = "No Capitol"
+  if (Details.capital != undefined) {
+    Capitol = Details.capital
   }
 
   //Breaking Down JSON DATA
@@ -87,7 +93,7 @@ function DetailsPage() {
             <span className="DetailsInfo">{Details.subregion}</span>{" "}
           </h3>
           <h3 className="Detailstitle">
-            Capitol : <span className="DetailsInfo">{Details.capital}</span>{" "}
+            Capitol : <span className="DetailsInfo">{Capitol}</span>{" "}
           </h3>
         </div>
         <div className="DetailsBlock">
