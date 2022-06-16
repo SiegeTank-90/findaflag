@@ -9,7 +9,6 @@ function DetailsPage() {
   const { name } = useParams();
   const [Details, setDetails] = useState({});
   const [isLoading, setisLoading] = useState(true);
-  
 
   async function getCountryDetails() {
     try {
@@ -45,24 +44,24 @@ function DetailsPage() {
   }
   let Currencies = "No Currency ";
   if (Details.currencies != null) {
-  let CurrenciesArray = Object.values(Details.currencies);
-  for (let i = 0; i < CurrenciesArray.length; i++) {
-    Currencies += CurrenciesArray[i].name;
-    if (i != CurrenciesArray.length - 1) {
-      Currencies += ", ";
+    let CurrenciesArray = Object.values(Details.currencies);
+    for (let i = 0; i < CurrenciesArray.length; i++) {
+      Currencies += CurrenciesArray[i].name;
+      if (i != CurrenciesArray.length - 1) {
+        Currencies += ", ";
+      }
     }
   }
-}
   let BorderButtonArray = [];
   if (Details.borders != null) {
-  let BorderingArray = Object.values(Details.borders);
-  for (let i = 0; i < BorderingArray.length; i++) {
+    let BorderingArray = Object.values(Details.borders);
+    for (let i = 0; i < BorderingArray.length; i++) {
       BorderButtonArray.push(<BorderButton code={BorderingArray[i]} />);
     }
   }
-  var Capitol = "No Capitol"
+  var Capitol = "No Capitol";
   if (Details.capital != undefined) {
-    Capitol = Details.capital
+    Capitol = Details.capital;
   }
 
   //Breaking Down JSON DATA
@@ -72,7 +71,11 @@ function DetailsPage() {
       <Link to="/" className="BackButton Element">
         <FontAwesomeIcon icon={faArrowLeft} /> <p className="Back">Back</p>
       </Link>
-      <img className="DetailsFlag Element" alt="Flag" src={Details.flags.png}></img>
+      <img
+        className="DetailsFlag Element"
+        alt="Flag"
+        src={Details.flags.png}
+      ></img>
       <div className="ThemeTextColor DetialsTextContainer">
         <h1 className="DetailsName">{Details.name.common}</h1>
         <div className="DetailsBlock">
