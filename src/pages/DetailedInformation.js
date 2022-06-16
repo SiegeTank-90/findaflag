@@ -87,7 +87,7 @@ function DetailsPage() {
             <span className="DetailsInfo">{Details.subregion}</span>{" "}
           </h3>
           <h3 className="Detailstitle">
-            Capitial : <span className="DetailsInfo">{Details.capital}</span>{" "}
+            Capitol : <span className="DetailsInfo">{Details.capital}</span>{" "}
           </h3>
         </div>
         <div className="DetailsBlock">

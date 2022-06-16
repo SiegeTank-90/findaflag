@@ -14,7 +14,7 @@ function Card(props) {
         <h3 className="CountyName">{props.Name}</h3>
         <h3 className="Population">{"Population : " + new Intl.NumberFormat('en-us').format(props.pop)} </h3>
         <h3 className="CountryRegion">{"Region : " + props.continent} </h3>
-        <h3 className="Capitol">{"Captiol : " + props.capitol} </h3>
+        <h3 className="Capitol">{"Capitol : " + props.capitol} </h3>
       </div>
     </Link>
   );
